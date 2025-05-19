@@ -3,57 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing Component</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-
-    <title>Interactive pricing component</title>
   </head>
   <body>
-    <div class="pricingPage">
-      <header class="header">
-        <h1>Simple, traffic-based pricing</h1>
-        <p>Sign-up for our 30-day trial. No credit card required.</p>
-      </header>
+    <main class="pricing-container">
+      <div class="heading">
+      <h1>Simple, <span>traffic-based pricing</span></h1>
+      <p>Sign-up for our 30-day trial. No credit card required.</p>
+      </div> 
 
-      <main class="main">
-        <section class="pageViews">
-
-          <div class = "price">
-          <p>100k Pageviews</p>
-          <p>Rs.<label id="priceRanges">0</label>/month</p>
+      <section class="card">
+        <div class="card-inner">
+          <div class="pageviews" id="pageviews">100K Pageviews</div>
+          <div class="price-block">
+            <span id="price" class="price">$16.00</span> / month
+          </div>
         </div>
 
-          <div class="slider">
-            <input type="range" min="0" max="100" class="sliders" id="priceRange" value=0 onchange="priceChangeHandler()" oninput="sliderprogress()"/>
-          </div>
+        <input
+          type="range"
+          min="0"
+          max="4"
+          value="2"
+          class="slider"
+          id="slider"
+        />
 
-        </section>
+        <div class="billing-toggle">
+          <span>Monthly Billing</span>
+          <label class="switch">
+            <input type="checkbox" id="billingToggle" />
+            <span class="slider-toggle"></span>
+          </label>
+          <span>Yearly Billing <span class="discount">25% discount</span></span>
+        </div>
 
-        <section class="discount">
-          <p>Monthly Billing</p>
-          <label class="switch"><input type="checkbox"> <span class="checkbox"></span></label>
-          <p>Yearly Billing</p>
-          <p>25% discount</p>
-        </section>
-
-        <hr />
-
-        <section class="list">
-          <ul>
-            <li>Unlimited websites</li>
-            <li>100% data ownership</li>
-            <li>Email reports</li>
+        <hr>
+        <div class="feature-button">
+          <ul class="features">
+            <li>
+              <div class="features-block">
+                <img
+                  src="images/icon-check.svg"
+                  alt="icon-check"
+                  title="icon-check"
+                />
+                Unlimited websites
+              </div>
+            </li>
+            <li>
+              <div class="features-block">
+                <img
+                  src="images/icon-check.svg"
+                  alt="icon-check"
+                  title="icon-check"
+                />
+                100% data ownership
+              </div>
+            </li>
+            <li>
+              <div class="features-block">
+                <img
+                  src="images/icon-check.svg"
+                  alt="icon-check"
+                  title="icon-check"
+                />
+                Email reports
+              </div>
+            </li>
           </ul>
+          <button class="start-btn">Start my trial</button>
+        </div>
+      </section>
+    </main>
 
-          <button>Start my trial</button>
-        </section>
-      </main>
-    </div>
     <script src="script.js"></script>
   </body>
 </html>
